@@ -17,8 +17,6 @@ function agregarAlCarrito(producto, precio) {
     mostrarCarrito();
 }
 
-
-
 // Función para mostrar el carrito
 function mostrarCarrito() {
     const contenedorCarrito = document.getElementById('contenedor-carrito');
@@ -110,13 +108,38 @@ function abrirModal(productoId) {
     // Información para cada producto
     const productos = {
         'producto-1': {
-            titulo: 'Producto Ecológico 1',
-            descripcion: 'Este producto es 100% ecológico, hecho con materiales reciclados y amigables con el medio ambiente.'
+            titulo: 'Estuche ecologico',
+            descripcion: 'Este producto es 100% ecológico, hecho con materiales reciclados y amigables con el medio ambiente.',
         },
         'producto-2': {
-            titulo: 'Producto Ecológico 2',
-            descripcion: 'Este producto es ideal para quienes buscan una opción sostenible para sus necesidades diarias.'
-        }
+            titulo: 'Cepillo de bambu',
+            descripcion: 'Este producto es ideal para quienes buscan una opción sostenible para sus necesidades diarias y es 100% ecologico.'
+        },
+        'producto-3': {
+            titulo: 'Pluma reutilizable',
+            descripcion: 'Esta pluma te vendra perfecta para tus estudios estan echas de papel reciclado, pegamento, un poco de agua solamente se usa una cantidad minima y lo mejor de todo son tintas ecologicas ademas de que actualmente en nuestro apartado de contacto puedos escribirnos para sugerir mas diseños'
+        },
+        'producto-4': {
+            titulo: 'Libreta ecologica',
+            descripcion: 'Este producto es 100% ecológico, hecho con materiales reciclados. Ideal para hacer tus apuntes y darle un giro verde a tu vida ',
+        },
+        'producto-5': {
+            titulo: 'Lapices ecologicos',
+            descripcion: 'Bueno si lo tuyo no son las plumas tambien tenemos lapices, que estan hecho a base periódico reciclado,pegamento ,puntillas para lápiz recicladas, el kit incluye 3 lapices de los colores basicos',
+        },
+        'producto-6': {
+            titulo: 'Botella reciclable',
+            descripcion: 'Este producto es 100% ecológico, hecho con materiales reciclados y amigables con el medio ambiente. Ideal para que empices a tomar un poco mas de agua jajaja.',
+        },
+        'producto-7': {
+            titulo: 'Cargador solar ecologico y casero',
+            descripcion: 'Cuantas veces no te pasa que te quedas sin bateria en el campus o en la calle pero ntp por que con este cargador solar siempre tendras un cargador contigo y aprovechar estos tiempos con mucho sol ademas de que proximamente se esta trabajando en la idea dar curso para hacerlo tu mismo ',
+        descripcion: 'Esta hecho a base de panel solar, cables reutilizables, una base reciclable(carton, pet,madera, etc...), cargadores que puedes reutilizar y algunos materiales que no dañan el medio ambiente y puedes conseguir hasta en una ferreteria',
+        },
+        'producto-8': {
+            titulo: 'Limpiador multiusos natural',
+            descripcion: 'Un producto ecologico a base de ingredientes naturales como vinagre, bicarbonato de sodio y aceites esenciales, ideal para limpiar diversas superficies sin químicos agresivos.',
+        } 
     };
 
     // Asignamos los datos del producto seleccionado al modal
@@ -151,4 +174,21 @@ window.addEventListener('scroll', function() {
     const parallax = document.querySelector('.parallax');
     const offset = window.pageYOffset;
     parallax.style.backgroundPosition = 'center ' + (offset * 0.5) + 'px';  // Cambia 0.5 para ajustar la velocidad del parallax
+});
+
+// Botón de modo oscuro
+const botonModoOscuro = document.getElementById('modo-oscuro');
+const logoImagen = document.getElementById('logo-imagen');
+
+// Escucha el clic en el botón de modo oscuro
+botonModoOscuro.addEventListener('click', () => {
+    // Activa o desactiva la clase de modo oscuro
+    document.body.classList.toggle('modo-oscuro');
+
+    // Cambia el logo según el modo
+    if (document.body.classList.contains('modo-oscuro')) {
+        logoImagen.src = 'logosc.png'; // Cambia al logo oscuro
+    } else {
+        logoImagen.src = 'uaqgreen.jpg.png'; // Cambia al logo claro
+    }
 });
